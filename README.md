@@ -1,6 +1,10 @@
 Unifi Exporter
 =========
 
+[![Actions Status](https://github.com/chriscowley/ansible-role-unifi_exporter/workflows/Static%20code%20analysis/badge.svg)](https://github.com/chriscowley/ansible-role-unifi_exporter/actions)
+[![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
+
+
 Install and configure the [Unifi Prometheus Exporter](https://github.com/mdlayher/unifi_exporter)
 
 Requirements
