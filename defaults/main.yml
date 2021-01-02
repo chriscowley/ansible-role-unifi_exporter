@@ -1,0 +1,15 @@
+---
+# defaults file for ccunix.unifi_exporter
+unifi_exporter_version: 0.4.0
+unifi_exporter_user: unifi_exporter
+unifi_exporter_group: "{{ unifi_exporter_user }}"
+unifi_exporter_home: "/var/lib/unifi_exporter"
+
+unifi_exporter_address: :9130
+unifi_exporter_metricspath: /metrics
+
+unifi_exporter_unifi_address: https://localhost:8443
+unifi_exporter_unifi_username: admin
+unifi_exporter_unifi_password: changeme
+unifi_exporter_unifi_site: home
+unifi_exporter_unifi_insecure: false

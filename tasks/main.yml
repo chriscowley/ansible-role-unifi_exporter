@@ -1,0 +1,70 @@
+---
+# tasks file for ccunix.unifi_exporter
+- name: unifi-exporter group
+  become: true
+  group:
+    name: "{{ unifi_exporter_group }}"
+    state: present
+    system: true
+  tags:
+    - unifi_exporter
+ 
+- name: unifi-exporter user
+  become: true
+  user:
+    name: "{{ unifi_exporter_user }}"
+    state: present
+    system: true
+    group: "{{ unifi_exporter_group }}"
+    home: "{{ unifi_exporter_home }}"
+    createhome: false
+    shell: /sbin/nologin
+  tags:
+    - unifi_exporter
+
+- name: unifi-exporter home
+  become: true
+  file:
+    path: "{{ unifi_exporter_home }}"
+    owner: "{{ unifi_exporter_user }}"
+    group: "{{ unifi_exporter_group }}"
+    mode: "u=rwx,g=rx,o="
+    state: directory
+  tags:
+    - unifi_exporter
+ 
+- name: Ensure /usr/local/bin exists
+  file:
+    path: /usr/local/bin
+    state: directory
+    mode: 02775
+  tags:
+    - unifi_exporter
+
+- name: Download executable
+  become: true
+  get_url:
+    url: "https://github.com/mdlayher/unifi_exporter/releases/download/{{ unifi_exporter_version }}/unifi_exporter"
+    dest: /usr/local/bin/unifi_exporter
+    owner: root
+    group: root
+    mode: 0755
+  tags:
+    - unifi_exporter
+
+- name: Write service file
+  template:
+    src: unifi_exporter.service.j2
+    dest: /etc/systemd/system/unifi_exporter.service
+  tags:
+    - unifi_exporter
+
+- name: Ensure Unifi Exporter is enabled on boot
+  become: True
+  systemd:
+    daemon_reload: True
+    name: unifi_exporter
+    enabled: True
+    state: started
+  tags:
+    - unifi_exporter
