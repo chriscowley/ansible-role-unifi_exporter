@@ -2,7 +2,7 @@ name: changelog and release automation
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   changelog:
