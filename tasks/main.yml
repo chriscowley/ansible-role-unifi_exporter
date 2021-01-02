@@ -1,29 +1,29 @@
 ---
 # tasks file for ccunix.unifi_exporter
 - name: unifi-exporter group
-  become: true
+  become: True
   group:
     name: "{{ unifi_exporter_group }}"
     state: present
-    system: true
+    system: True
   tags:
     - unifi_exporter
- 
-- name: unifi-exporter user
-  become: true
+
+- name: Unifi-exporter user
+  become: True
   user:
     name: "{{ unifi_exporter_user }}"
     state: present
-    system: true
+    system: True
     group: "{{ unifi_exporter_group }}"
     home: "{{ unifi_exporter_home }}"
-    createhome: false
+    createhome: False
     shell: /sbin/nologin
   tags:
     - unifi_exporter
 
-- name: unifi-exporter home
-  become: true
+- name: Unifi-exporter home
+  become: True
   file:
     path: "{{ unifi_exporter_home }}"
     owner: "{{ unifi_exporter_user }}"
@@ -32,7 +32,7 @@
     state: directory
   tags:
     - unifi_exporter
- 
+
 - name: Ensure /usr/local/bin exists
   file:
     path: /usr/local/bin
@@ -42,7 +42,7 @@
     - unifi_exporter
 
 - name: Download executable
-  become: true
+  become: True
   get_url:
     url: "https://github.com/mdlayher/unifi_exporter/releases/download/{{ unifi_exporter_version }}/unifi_exporter"
     dest: /usr/local/bin/unifi_exporter

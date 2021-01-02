@@ -1,5 +1,4 @@
 ---
----
 - name: Restart unifi_exporter
   systemd:
     daemon_reload: True
