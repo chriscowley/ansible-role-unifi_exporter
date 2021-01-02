@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: unifi_exporter
   author: Chris Cowley
   description: Install unifi_exporter
   issue_tracker_url: https://github.com/chriscowley/ansible-role-unifi_exporter/issues
