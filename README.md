@@ -3,7 +3,7 @@ Unifi Exporter
 
 [![Actions Status](https://github.com/chriscowley/ansible-role-unifi_exporter/workflows/Static%20code%20analysis/badge.svg)](https://github.com/chriscowley/ansible-role-unifi_exporter/actions)
 [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
-![Ansible Role](https://img.shields.io/ansible/role/chriscowley.unifi_exporter)
+[![Ansible Role](https://img.shields.io/badge/ansible%20role-chriscowley.unifi_exporter-blue.svg)](https://galaxy.ansible.com/chriscowley/unifi_exporter)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/chriscowley/ansible-role-unifi_exporter)
 
 
