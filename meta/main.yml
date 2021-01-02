@@ -1,6 +1,8 @@
+---
 galaxy_info:
   author: Chris Cowley
   description: Install unifi_exporter
+  issue_tracker_url: https://github.com/chriscowley/ansible-role-unifi_exporter/issues
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value

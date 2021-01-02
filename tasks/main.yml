@@ -1,6 +1,6 @@
 ---
 # tasks file for ccunix.unifi_exporter
-- name: unifi-exporter group
+- name: Unifi-exporter group
   become: True
   group:
     name: "{{ unifi_exporter_group }}"
